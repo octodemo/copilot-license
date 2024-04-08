@@ -16,4 +16,4 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.TOKEN }}
           ORG: ${{ github.repository_owner }}
-          USERS: ${{ github.event.issue.body }}
+          USERS: ${{ github.event.issue.user.login }}
