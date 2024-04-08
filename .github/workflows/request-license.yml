@@ -7,10 +7,15 @@ jobs:
   add:
     runs-on: ubuntu-latest
     env:
-      GH_TOKEN: ${{ secrets.TOKEN }}
       USERS: ${{ github.event.issue.user.login }}
       ORG: ${{ github.repository_owner }}
     steps:
+      - name: Generate a token
+        id: generate-token
+        uses: actions/create-github-app-token@v1
+        with:
+          app-id: ${{ vars.APP_ID }}
+          private-key: ${{ secrets.APP_PRIVATE_KEY }}
       - name: Run Copilot Request
         continue-on-error: true # temp
         run: |
@@ -18,15 +23,21 @@ jobs:
             --method POST \
             /orgs/$ORG/copilot/billing/selected_users \
             -f "selected_usernames[]=$USERS"
+        env:
+          GH_TOKEN: ${{ steps.generate-token.outputs.token }}
       - name: Add Comment
         run: |
           gh api \
             --method POST \
             /repos/${{ github.repository }}/issues/${{ github.event.issue.number }}/comments \
             -f "body=Succesfully added a copilot license for $USERS"
+        env:
+          GH_TOKEN: ${{ steps.generate-token.outputs.token }}
       - name: Close Issue
         run: |
           gh api \
             --method PATCH \
             /repos/${{ github.repository }}/issues/${{ github.event.issue.number }} \
-            -f "state=closed"
+            -f "state=closed"      
+        env:
+          GH_TOKEN: ${{ steps.generate-token.outputs.token }}
