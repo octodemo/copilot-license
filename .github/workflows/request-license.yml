@@ -12,6 +12,7 @@ jobs:
       ORG: ${{ github.repository_owner }}
     steps:
       - name: Run Copilot Request
+        continue-on-error: true # temp
         run: |
           gh api \
             --method POST \
