@@ -1,0 +1,19 @@
+name: Copilot Request
+on:
+  issues:
+    types: [opened]
+
+jobs:
+  add:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run Copilot Request
+        run: |
+          gh api \
+            --method POST \
+            /orgs/$ORG/copilot/billing/selected_users \
+            -f "selected_usernames[]=$USERS"
+        env:
+          GH_TOKEN: ${{ secrets.TOKEN }}
+          ORG: ${{ github.repository_owner }}
+          USERS: ${{ github.event.issue.body }}
