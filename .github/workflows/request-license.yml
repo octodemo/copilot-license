@@ -9,6 +9,9 @@ jobs:
     env:
       USERS: ${{ github.event.issue.user.login }}
       ORG: ${{ github.repository_owner }}
+    environment:
+      name: copilot
+      url: https://github.com/organizations/${{ github.repository_owner }}/settings/copilot/seat_management
     steps:
       - name: Generate a token
         id: generate-token
