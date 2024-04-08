@@ -1,7 +1,7 @@
 name: Copilot Request
 on:
   issues:
-    types: [opened, reopened]
+    types: [opened]
 
 jobs:
   add:
@@ -20,7 +20,6 @@ jobs:
           app-id: ${{ vars.APP_ID }}
           private-key: ${{ secrets.APP_PRIVATE_KEY }}
       - name: Run Copilot Request
-        continue-on-error: true # temp
         run: |
           gh api \
             --method POST \
