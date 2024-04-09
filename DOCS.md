@@ -19,7 +19,7 @@ There are many things you can modify in this project. Most notably:
 
 ## Issue Templates
 
-The project uses an issue templates defined in [request-license.yml](../../../../../c:/Users/auste/source/copilot-license/.github/ISSUE_TEMPLATE/request-license.yml).
+The project uses an issue templates defined in [request-license.yml](.github/ISSUE_TEMPLATE/request-license.yml).
 
 `request-license.yml` is used to request a Copilot License. It requires the user to provide a reason for the request.
 
