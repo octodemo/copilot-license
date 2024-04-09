@@ -18,3 +18,12 @@ jobs:
       - uses: austenstone/copilot-license-cleanup@v1.4
         with:
           github-token: ${{ steps.generate-token.outputs.token }}
+          # remove: false
+          # remove-from-team: false
+          # inactive-days: 30
+          csv: true
+          job-summary: true
+          # deploy-users: true
+          # deploy-users-dry-run: false    # Default is true
+          # deploy-users-csv: ./copilot-users.csv
+          # deploy-validation-time: 3
