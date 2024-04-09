@@ -1,3 +1,19 @@
+# How to use this
+
+1. Fork this repository.
+1. Create a GitHub App and install it on your fork.
+  1. Permissions needed:
+    1. Issues: Read & write
+    2. Copilot: Read & write
+2. Add secrets
+  2. `APP_PRIVATE_KEY`: The private key of the GitHub App you created.
+3. Add variables
+  1. `APP_ID`: The ID of the GitHub App you created.
+4. Create an issue in your fork to request a license.
+
+There are many things you can modify in this project. Most notably:
+* The issue template in [request-license.yml](.github/ISSUE_TEMPLATE/request-license.yml).
+* The cleanup schedule in [cleanup.yml](.github/workflows/cleanup.yml).
 
 # Technical Details
 
