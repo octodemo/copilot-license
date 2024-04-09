@@ -1,6 +1,6 @@
 # How to use this
 
-1. Fork this repository into your organization.
+1. [Fork this repository](https://github.com/octodemo/copilot-license/fork) into your organization.
 1. [Register a GitHub App](https://docs.github.com/en/enterprise-cloud@latest/apps/creating-github-apps/registering-a-github-app/registering-a-github-app#registering-a-github-app) and [install it](https://docs.github.com/en/enterprise-cloud@latest/apps/using-github-apps/installing-your-own-github-app#installing-your-own-github-app) on your fork.
    1. Permissions needed:
       1. Issues: Read & write
