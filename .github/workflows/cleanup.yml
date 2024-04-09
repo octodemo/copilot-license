@@ -9,6 +9,12 @@ jobs:
     name: Copilot Seats
     runs-on: ubuntu-latest
     steps:
+      - name: Generate a token
+        id: generate-token
+        uses: actions/create-github-app-token@v1
+        with:
+          app-id: ${{ vars.APP_ID }}
+          private-key: ${{ secrets.APP_PRIVATE_KEY }}
       - uses: austenstone/copilot-license-cleanup@v1.4
         with:
-          github-token: ${{ secrets.TOKEN }}
+          github-token: ${{ steps.generate-token.outputs.token }}
