@@ -27,6 +27,6 @@ The project uses an issue templates defined in [request-license.yml](.github/ISS
 
 There are two workflows in this project: [request-license.yml](.github/workflows/request-license.yml) and [cleanup.yml](.github/workflows/cleanup.yml).
 
-`request-license.yml` is triggered when an issue is opened. It adds the user who opened the issue to the Copilot license, adds a comment to the issue stating that the license was added, and then closes the issue.
+`request-license.yml` is triggered when an issue is opened. It gives a license to the user who opened the issue, adds a comment to the issue stating that the license was added, and then closes the issue.
 
 `cleanup.yml` is a scheduled workflow that runs every day at midnight. It uses the `copilot-license-cleanup` action to clean up inactive Copilot licenses.
