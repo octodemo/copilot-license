@@ -6,7 +6,7 @@
       1. Issues: Read & write
       2. Copilot: Read & write
 2. [Add actions secrets](https://docs.github.com/en/actions/security-guides/using-secrets-in-github-actions#creating-secrets-for-a-repository)
-   2. `APP_PRIVATE_KEY`: The private key of the GitHub App you created.
+   1. `APP_PRIVATE_KEY`: The private key of the GitHub App you created.
 3. [Add actions variables](https://docs.github.com/en/actions/learn-github-actions/variables#creating-configuration-variables-for-a-repository)
    1. `APP_ID`: The ID of the GitHub App you created.
 4. Create an issue in your fork to request a license.
