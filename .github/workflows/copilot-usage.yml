@@ -17,7 +17,7 @@ jobs:
           private-key: ${{ secrets.APP_PRIVATE_KEY }}
       - uses: austenstone/copilot-usage@main
         with:
-          enterprise: github
+          organization: ${{ github.repository_owner }}
           job-summary: true
           csv: true
           github-token: ${{ steps.generate-token.outputs.token }}
