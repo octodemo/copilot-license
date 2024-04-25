@@ -9,15 +9,9 @@ jobs:
     name: Run Action
     runs-on: ubuntu-latest
     steps:
-      - name: Generate a token
-        id: generate-token
-        uses: actions/create-github-app-token@v1
-        with:
-          app-id: ${{ vars.APP_ID }}
-          private-key: ${{ secrets.APP_PRIVATE_KEY }}
       - uses: austenstone/copilot-usage@main
         with:
           organization: ${{ github.repository_owner }}
           job-summary: true
           csv: true
-          github-token: ${{ steps.generate-token.outputs.token }}
+          github-token: ${{ secrets.TOKEN }}
