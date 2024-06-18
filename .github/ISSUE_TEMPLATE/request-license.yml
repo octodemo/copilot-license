@@ -1,7 +1,7 @@
-name: 🤖 Copilot Request
-description: Request a Copilot License
-title: "[Copilot Request] "
-labels: [copilot, license]
+name: ➕ Create New Repository
+description: Request a new repository
+title: "[Repo Request] "
+labels: [repo, request]
 assignees:
   - austenstone
 body:
